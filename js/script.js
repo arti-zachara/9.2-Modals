@@ -20,7 +20,7 @@
   // function opening modal
   var showModal = function(event, modalToBeShown) {
     event.preventDefault();
-    hideAllModals;
+    hideAllModals();
     document.querySelector(modalToBeShown).classList.add("show");
     document.querySelector("#modal-overlay").classList.add("show");
   };
