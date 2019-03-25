@@ -11,8 +11,8 @@
   var modalLinks = document.querySelectorAll(".show-modal");
 
   for (var i = 0; i < modalLinks.length; i++) {
-    var modalLinkId = modalLinks[i].getAttributeNode("href").value;
     modalLinks[i].addEventListener("click", function() {
+      var modalLinkId = this.getAttributeNode("href").value;
       showModal(event, modalLinkId);
     });
   }
