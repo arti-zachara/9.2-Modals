@@ -7,6 +7,16 @@
     }
   }
 
+  // links opening modals
+  var modalLinks = document.querySelectorAll(".show-modal");
+
+  for (var i = 0; i < modalLinks.length; i++) {
+    var modalLinkId = modalLinks[i].getAttributeNode("href").value;
+    modalLinks[i].addEventListener("click", function() {
+      showModal(event, modalLinkId);
+    });
+  }
+
   // function opening modal
   var showModal = function(event, modalToBeShown) {
     event.preventDefault();
@@ -14,15 +24,6 @@
     document.querySelector(modalToBeShown).classList.add("show");
     document.querySelector("#modal-overlay").classList.add("show");
   };
-
-  // links opening modals
-  var modalLinks = document.querySelectorAll(".show-modal");
-
-  for (var i = 0; i < modalLinks.length; i++) {
-    modalLinks[i].addEventListener("click", function() {
-      showModal(event, modalLinks[i].href);
-    });
-  }
 
   // closing modals removing overlay display
   var hideModal = function(event) {
